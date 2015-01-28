@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <!-- Important Owl stylesheet -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        
+        <header id="nav">
+            <nav>
+                <ul>
+                    <li><a id="about" class="smoothScroll" href="#landing-wrap" title="About">About</a></li>
+                    <li><a id="top-twenty" class="smoothScroll" href="#table-wrap" title="Top Twenty">Top Twenty</a></li>
+                    <li><a id="latest" class="smoothScroll" href="#pacs-wrap" title="Latest Pacs">Latest Super PACS & PACS</a></li>
+                    <li><a id="graphs" class="smoothScroll" href="#graph-wrap" title="Graphs">Graphs</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="landing-wrap">
+            <section id="about" name="about"></section>
+            <div class="landing-splash vh-center">
+                <h1>PACTRACKER</h1>
+                <h3><span>Tracking PAC's and Super PAC's</span></h3>
+                <p>The goal of this website is to try to monitor contributions.  All to often we here about big political donations but we end up finding out about them too late.  Wouldn't it be better if we could try and track contributions as close to real time as possible?  That's what this website tries to accomplish.  Every time you refresh this page it makes a call to the New York Times web api and loads in the latest data!</p>
+            </div>
+        </div>
+
+        <div id="table-wrap">
+        
+            <div id="owl-carousel-table" class="owl-carousel owl-theme vh-center">
+                <div class="item">
+                    <table class="table-wrap">
+                      <h3><span>Top Twenty Politicians Who Have Recieved Money from PAC's</span></h3>
+                      <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Party</th>
+                              <th>Total From PAC's</th>
+                              <th>Coverage Date From:</th>
+                              <th>Coverage Date To:</th>
+                          </tr>
+                      </thead>
+                      <tbody id="pactotal">
+                          <!-- jsonp is getting inserted here -->
+                      </tbody>
+                    </table>
+                </div><!-- end owl indivual -->
+                <div class="item">
+                    <table class="table-wrap">
+                      <h3><span>Top Twenty Politicians Who Have Recieved Money from PAC's and Individuals Combined</span></h3>
+                      <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Party</th>
+                              <th>Total Contributions</th>
+                              <th>Coverage Date From:</th>
+                              <th>Coverage Date To:</th>
+                          </tr>
+                      </thead>
+                      <tbody id="twentytotal">
+                          <!-- jsonp is getting inserted here -->
+                      </tbody>
+                    </table>
+                </div><!-- end owl indivual -->
+                <div class="item">
+                    <table class="table-wrap">
+                      <h3><span>Top Twenty Politicians Who Have Recieved Money from Individuals</span></h3>
+                      <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Party</th>
+                              <th>Total Contributions From Individuals</th>
+                              <th>Coverage Date From:</th>
+                              <th>Coverage Date To:</th>
+                          </tr>
+                      </thead>
+                      <tbody id="twentyindividualtotal">
+                          <!-- jsonp is getting inserted here -->
+                      </tbody>
+                    </table>
+                </div><!-- end owl indivual -->
+            </div><!-- end owl -->
+        </div>
+
+        <div id="pacs-wrap">
+            
+            <div class="pacs-container vh-center">
+                <h2><span>Latest PAC's registared with FEC</span></h2>
+                <div id="twentyNewestPacsContainer" class="ctn-pacs">
+                  <!-- jsonp is getting inserted here -->
+                </div>
+            </div>
+            
+            <div class="pacs-container vh-center">
+                <h2><span>Latest super PAC's registared with FEC</span></h2>
+                <div id="twentyNewestSuperPacsContainer" class="ctn-pacs">
+                  <!-- jsonp is getting inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="graph-wrap">
+            
+            <div id="owl-carousel-graph" class="owl-carousel owl-theme vh-center">
+                <div class="item">
+                    <div id="piecontainer"></div>
+                </div>
+                <div class="item">
+                    <div id="dembarcontainer"></div>
+                </div>
+                <div class="item">
+                    <div id="repbarcontainer"></div>
+                </div>
+                <div class="item">
+                    <div id="repbarcontainertotal"></div>
+                </div>
+                <div class="item">
+                    <div id="dembarcontainertotal"></div>
+                </div>    
+            </div>
+        </div>
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/vendor/highcharts.js"></script>
+        <script src="js/vendor/highcharts-3d.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
